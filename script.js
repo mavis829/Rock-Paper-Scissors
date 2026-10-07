@@ -21,19 +21,22 @@ function getHumanChoice(){
 
 console.log("Human Choice is " + getHumanChoice());
 
+
+function playGame(){
+  
 let humanScore = 0;
 let computerScore = 0;
 
 
 
 function playRound(humanChoice, computerChoice){
-    humanChoice = humanSelection.toLowerCase();
-    computerChoice = computerSelection.toLowerCase();
+    humanChoice = humanChoice.toLowerCase();
+    computerChoice = computerChoice.toLowerCase();
     if (humanChoice === computerChoice) {
-      console.log("Let's play again!");
-    } else if ( (humanChoice === "paper" && computerChoice === "rock") ||
-              (humanChoice === "scissor" && computerChoice === "paper") ||
-              (humanChoice === "rock" && computerChoice === "scissor")
+      console.log("It's a tie! You both chose " + humanChoice);
+    } else if ( (humanChoice === "rock" && computerChoice === "paper") ||
+              (humanChoice === "paper" && computerChoice === "scissor") ||
+              (humanChoice === "scissor" && computerChoice === "rock")
               ) {
       console.log("You lose! " + computerChoice + "beats" + humanChoice);
        computerScore++;
@@ -42,17 +45,24 @@ function playRound(humanChoice, computerChoice){
     console.log("You win! " + humanChoice + "beats" + computerChoice);
       humanScore++;
   }
-console.log("Human Score is " + humanScore + "vs Computer Score is " + computerScore);
+console.log("Your Score is " + humanScore + " vs Computer Score is " + computerScore);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
-
-function playGame(){
    for (let i=0; i<5 ; i++){
+     const humanSelection = getHumanChoice();
+     const computerSelection = getComputerChoice();
      playRound(humanSelection,computerSelection);
    }
+
+  if (humanScore > computerScore) {
+    console.log("You won the game!");
+  } else if (computerScore > humanScore) {
+    console.log("You lost the game!");
+  } else {
+    console.log("The game is a tie!");
+  }
+
+  
 }
 
+playGame(); 
