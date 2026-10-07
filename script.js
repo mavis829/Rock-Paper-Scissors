@@ -14,3 +14,6 @@ return randomChoice;
 
   
 }
+
+
+console.log(randomChoice);
