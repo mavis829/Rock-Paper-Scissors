@@ -2,6 +2,7 @@ console.log("Hello World");
 
 function getComputerChoice(){
   let randomInt = Math.floor(Math.random() * 3);
+  let randomChoice;
   if (randomInt === 0) {
     randomChoice = "Rock";
   } else if (randomInt === 1) {
@@ -17,3 +18,4 @@ return randomChoice;
 
 
 console.log(getComputerChoice());
+  
