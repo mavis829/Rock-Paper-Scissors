@@ -42,7 +42,7 @@ function playRound(humanChoice, computerChoice){
     console.log("You win! " + humanChoice + "beats" + computerChoice);
       humanScore++;
   }
-console.log("Human Score is " + humanScore "vs Computer Score is " + computerScore);
+console.log("Human Score is " + humanScore + "vs Computer Score is " + computerScore);
 }
 
 const humanSelection = getHumanChoice();
