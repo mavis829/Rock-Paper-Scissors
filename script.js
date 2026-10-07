@@ -16,4 +16,4 @@ return randomChoice;
 }
 
 
-console.log(randomChoice);
+console.log(getComputerChoice());
